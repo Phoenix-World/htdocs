@@ -11,7 +11,7 @@
 <div class="container register">
 	<div class="row">
 		<div class="col-md-3 register-left">
-			<img src="#" alt="#" />
+			<img src="1448.png" alt="#" />
 			<h3>Welcome</h3>
 			<p> Please fill all the details carefully.This form can change your life</p>
 			<a href="display.php ">Check Form </a>
@@ -21,7 +21,7 @@
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 					<h3 class="register-heading">Apply for Web Development Post</h3>
-					<form action="" method="POST">
+					<form action="" method="POST" autocomplete="off">
 						<div class="row register-form">
 
 							

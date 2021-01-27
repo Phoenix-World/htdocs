@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Example</title>
+  <title>Update Example</title>
   <?php include 'links.php' ?>
   <?php include 'CSS/style.css' ?>
   
@@ -12,7 +12,7 @@
 <div class="container register">
 	<div class="row">
 		<div class="col-md-3 register-left">
-			<img src="#" alt="#" />
+			<img src="1448.png" alt="#" />
 			<h3>Welcome</h3>
 			<p> Please fill all the details carefully.This form can change your life</p>
 			<a href="display.php ">Check Form </a>
@@ -22,7 +22,7 @@
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 					<h3 class="register-heading">Apply for Web Development Post</h3>
-					<form action="" method="POST">
+					<form action="" method="POST" autocomplete="off">
 						<div class="row register-form">
 					
 					<?php
@@ -34,6 +34,8 @@
 							$arrdata = mysqli_fetch_array($showdata);
 
 							if (isset($_POST['submit'])) {
+								$idupdate = $_GET['id'];
+
 								$name = $_POST['user'];
 								$degree = $_POST['degree'];
 								$mobile = $_POST['mobile'];
@@ -41,14 +43,18 @@
 								$refer = $_POST['refer'];
 								$jobprofile = $_POST['jobprofile'];
 
-								$insertquery = "insert into jobregistration(name,degree,mobile,email,refer,jobpost)
-												value('$name','$degree','$mobile','$email','$refer','$jobprofile')";
-								$res = mysqli_query($con , $insertquery);
+								//$insertquery = "insert into jobregistration(name,degree,mobile,email,refer,jobpost)
+												//value('$name','$degree','$mobile','$email','$refer','$jobprofile')";
+
+								$upquery = "update jobregistration set id='$ids', name='$name', degree='$degree',mobile='$mobile',
+								          email='$email',refer='$refer', jobpost='$jobprofile' where id ={$idupdate}";
+								
+								$res = mysqli_query($con , $upquery);
 
 								if ($res) {
 									?>
 									<script>
-										alert("Data inserted properly");
+										alert("Data Updated properly");
 									</script>
 									
 									<?php
@@ -57,7 +63,7 @@
 									
 									?>
 									<script>
-										alert("Data not inserted");
+										alert("Data not Updated");
 									</script>
 									<?php
 								}

@@ -50,7 +50,7 @@
                             <td><a href="updates.php?id=<?php echo $res['id'];?>" data-toggle="tooltip" data-placement="top" title="UPDATE"><i class="fa fa-edit" 
                             	aria-hidden="true"></i></a></td>
                             
-                            <td><a href="#" data-toggle="tooltip" data-placement="top" title="DELETE"><i class="fa fa-trash"
+                            <td><a href="delete.php?id=<?php echo $res['id'];?>" data-toggle="tooltip" data-placement="top" title="DELETE"><i class="fa fa-trash"
                             	 aria-hidden="true"></i></a></td>
                             </tr>
 
